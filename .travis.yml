@@ -20,3 +20,4 @@ install:
 script:
  - cd squashible
  - sudo ansible-playbook -i hosts_generator.py squashible.yml -e "live_os=debian_jessie"
+ - ls -lha live_output
