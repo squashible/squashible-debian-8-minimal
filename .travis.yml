@@ -1,0 +1,18 @@
+---
+language: python
+python: "2.7"
+sudo: required
+dist: trusty
+
+before_install:
+ - find . 
+ - sudo apt-get update -qq
+ - sudo apt-get install -qq squashfs-tools uuid python-apt python-pycurl btrfs-tools
+
+install:
+ - sudo pip install ansible
+ - sudo pip install docker-py
+
+script:
+ - cd squashible
+ - sudo ansible-playbook -i hosts_generator.py squashible.yml -e "live_os=debian_jessie"
