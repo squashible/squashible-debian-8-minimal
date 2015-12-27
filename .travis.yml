@@ -24,4 +24,4 @@ script:
 - sudo chown -R travis:travis live_output
 - cd live_output
 after_success:
-    "curl --ftp-create-dirs -T '{vmlinuz,initrd.img,filesystem.squashfs}' -u $FTP_USER:$FTP_PASSWORD ftp://images.squashible.com/images/squashible-debian-jessie-minimal/"
+    "curl --ftp-create-dirs -T '{vmlinuz,initrd.img,filesystem.squashfs}' -u $FTP_USER:$FTP_PASSWORD ftp://images.squashible.com/images/squashible-debian-8-minimal/"
